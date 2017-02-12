@@ -36,17 +36,13 @@ public class MasterControl {
 		resultLines.clearLines();
 		rawResultLines.clearLines();
 		
-		// Set up observation
-		rawInputLines.addObserver(shifter);
-		resultLines.addObserver(requireFilter);
-		rawResultLines.addObserver(alphabetizer);
 
 		// Set ignore words and required words (make them lowercase for comparison)
 		shifter.setIgnoreWords(this.transformSetToLowercase(ignoredWords));
 		requireFilter.setRequiredWords(this.transformSetToLowercase(requiredWords));
 		
-		
-		if (requiredWords.isEmpty()) {
+		if (requiredWords.size() == 1) {
+			
 			// Set up observation
 			rawInputLines.addObserver(shifter);
 			resultLines.addObserver(alphabetizer);
@@ -64,7 +60,6 @@ public class MasterControl {
 			resultLines.addObserver(requireFilter);
 			rawResultLines.addObserver(alphabetizer);
 			
-			// Add data line by line
 			for (String line : input) {
 				rawInputLines.addLine(line);
 			}

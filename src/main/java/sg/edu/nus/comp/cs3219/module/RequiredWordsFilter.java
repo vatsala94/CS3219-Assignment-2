@@ -19,7 +19,7 @@ public class RequiredWordsFilter implements Observer {
 		resultStorage = storage;
 	}
 	
-	public Set<String> setRequiredWords(){
+	public Set<String> getRequiredWords(){
 		return requiredWords;		
 	}
 		

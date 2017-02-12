@@ -22,6 +22,8 @@ public class MasterControlTest {
 	@Test
 	public void testExample1() {
 		Set<String> requireWords = new HashSet<>();
+		requireWords.add("");
+		//requiredWords.size() must be 1, but it is not the case when it is created from a HashSet
 		
 		Set<String> ignoreWords = new HashSet<>();
 		ignoreWords.add("is");
